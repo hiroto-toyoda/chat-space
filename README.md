@@ -6,7 +6,7 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :user
 
 ## usersテーブル
 
@@ -17,4 +17,4 @@
 |password|string|null: false|
 
 ### Association
-- belongs_to :user
+- has_many :through
