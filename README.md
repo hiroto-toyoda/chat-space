@@ -7,16 +7,14 @@
 
 ### Association
 - belongs_to :group
-- belongs_to :user
 
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false, foreign_key: true|
-|email|integer|null: false, foreign_key: true|
-|password|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
 
 ### Association
-- belongs_to :group
 - belongs_to :user
