@@ -31,9 +31,8 @@
 |body|text|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
 - has_many :groups,through: :users
-
+- belongs_to :group
 
 ### groups
 |Column|Type|Options|
