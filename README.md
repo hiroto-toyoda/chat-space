@@ -32,6 +32,7 @@
 
 ### Association
 - has_many :groups
+- has_many :groups,through: :users
 
 
 ### groups
