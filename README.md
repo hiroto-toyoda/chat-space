@@ -25,13 +25,12 @@
 ### messages
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false, foreign_key: true|
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true| 
-|body|text|null: false, foreign_key: true|
+|body|text||
 
 ### Association
-- has_many :groups,through: :users
 - belongs_to :user
 - belongs_to :group
 
