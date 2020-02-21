@@ -36,7 +36,7 @@
 ### groups
 |Column|Type|Options|
 |------|----|-------|
-|users_id|string|null: false, foreign_key: true|
+|name|string|null: false,unique: true, index: true|
 
 ### Association
 - has_many :messages
