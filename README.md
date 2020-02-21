@@ -25,13 +25,14 @@
 ### messages
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false,unique: true, index: true|
-|users_id|string|null: false,unique: foreign_key: true|
-|groups_id|string|null: false,unique: foreign_key: true| 
+|image|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true| 
+|body|text|null: false, foreign_key: true|
 
 ### Association
-- has_many :messages
 - has_many :groups
+
 
 ### groups
 |Column|Type|Options|
