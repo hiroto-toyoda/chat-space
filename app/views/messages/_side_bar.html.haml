@@ -1,0 +1,20 @@
+.side_bar
+  .side_bar__user-name
+    .side_bar__user-name__box
+      %p.side_bar__user-name__box__name
+        豊田裕人
+      %ul.side_bar__user-name__box__icons
+        %li.side_bar__user-name__box__icons__edit-user
+          = link_to "#" do
+            = icon('fas','edit')
+        %li.side_bar__user-name__box__icons__new-group
+          = link_to "#" do
+            = icon('fas','cog')
+
+  .side_bar__groups
+    .group
+      = link_to "#", class:"link" do
+        .group__group-name
+          test
+        .group__latest-message
+          まだメッセージはありません
