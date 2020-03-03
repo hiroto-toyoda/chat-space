@@ -2,12 +2,14 @@
   .main_chat__group
     .main_chat__group__main-header__left-box
       .main_chat__group__main-header__left-box__name
-        test
+        = @group.name
       .main_chat__group__main-header__left-box__member
-        member:masa
+        - @group.users.each do |user| 
+          = user.name
     .main_chat__group__main-header__right-box
-      = link_to "#", class:"main_chat__group__main-header__right-box__edit-btn" do
+      = link_to edit_group_path(@group), class:"main_chat__group__main-header__right-box__edit-btn" do
         edit
+
 
   .main_chat__message
     .main_chat__message__box
@@ -22,11 +24,41 @@
   .main_chat__message-form
     .main_chat__message-form__new-message
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas','image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'input-box__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'nput-box__image__file'
+          = f.submit 'Send', class: 'submit-btn'
+
+-# .messages
+-#   = render @messages
+
+
+-# .main_chat__group
+-#   Member：sample_user
+-#   - @group.users.each_with_index do |user, i|
+-#     - unless i.zero?
+-#       ,
+-#     = user.name
 
 
 
+
+      -# = form_for [@group, @message] do |f|
+      -#   = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+      -#   .form__mask
+      -#     = f.label :image, class: 'input-box__image' do
+      -#       = icon('fas', 'image', class: 'icon')
+      -#       = f.file_field :image, class: 'nput-box__image__file'
+      -#   = f.submit 'Send', class: 'submit-btn'
+
+
+-# .input-box
+-#          = form_for [@group, @message] do |f|
+-#           %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+-#           %label{class: "input-box__image"}
+-#           = icon('fas','image')
+-#           %input{type: "file", class: "input-box__image__file"}
+-#           %input{type: "submit", class: "submit-btn"}
