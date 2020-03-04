@@ -11,7 +11,7 @@
 -#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
 
-.main_chat__message__box
+.message{date: {message: {id:message.id}}}
   .main_chat__message__box__upper-info
     %p.main_chat__message__box__upper-info__talker
       = message.user.name

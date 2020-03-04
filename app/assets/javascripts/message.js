@@ -39,28 +39,27 @@ $(function(){
      return html;
    };
  }
-$('#new_message').on('submit', function(e){
- e.preventDefault();
- var formData = new FormData(this);
- var url = $(this).attr('action')
- $.ajax({
-   url: url,
-   type: "POST",
-   data: formData,
-   dataType: 'json',
-   processData: false,
-   contentType: false
- })
-  .done(function(data){
-    var html = buildHTML(data);
-    $('.messages').append(html);      
-    $('form')[0].reset();
-    $('input').prop('disabled', false);
-    $('div').animate({ scrollTop: $('div')[0].scrollHeight});
-    return false
+  $('#new_message').on('submit', function(e){
+  e.preventDefault();
+  var formData = new FormData(this);
+  var url = $(this).attr('action')
+  $.ajax({
+    url: url,
+    type: "POST",
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
   })
-  .fail(function() {
-    alert("メッセージ送信に失敗しました");
-});
-})
-});
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.main_chat__message').append(html);      
+      $('.main_chat__message').animate({ scrollTop: $('.main_chat__message')[0].scrollHeight});
+      $('form')[0].reset();
+      $('input').prop('disabled', false);
+    })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    });
+  })
+  });
