@@ -128,6 +128,7 @@
     height: calc(100vh - 190px);
     padding: 46px 40px;
     background-color: #fafafa;
+    overflow: scroll;
     &__box{
       padding-bottom: 40px;
       &__upper-info{
@@ -158,39 +159,42 @@
 
     &__new-message{
       display: flex;
-      
-      .submit-btn {
+      position: relative;
+      // height: 100%;
+      // &__input-box {
+      //   display: flex;
+      //   width: 100%;
+      //   position: relative;
+      &__submit-btn {
         width: 100px;
         height: 50px;
-        padding: 0 30px;
-        margin-left: 15px;
         background-color: #38aef0;
         color: white;
-        cursor: pointer;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        right: 0px;
       }
-    }
-    .input-box {
-      display: flex;
-      width: 100%;
-      position: relative;
       &__text {
         height: 50px;
-        width: 100%;
+        width: calc(100vw - 500px);
         color: #434a54;
-        border-style: none;
-        padding: 0 40px 0 10px;
+        padding-left: 10px;
+        margin-bottom: 20px;
       }
-      &__image {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        font-size: 1.3rem;
-  
-        &__file {
-          display: none;
-        }
+        &__image {
+          position: absolute;
+          top: 15px;
+          right: 135px;
+          z-index: 2;
+    
+          &__file {
+            display: none;
+          }
       }
     }
   }
+}
+.flex{
+  display: flex;
 }
