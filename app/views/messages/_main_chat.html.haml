@@ -14,14 +14,6 @@
   .main_chat__message
     .messages
       = render @messages
-    -# .main_chat__message__box
-    -#   .main_chat__message__box__upper-info
-    -#     %p.main_chat__message__box__upper-info__talker
-    -#       masa
-    -#     %p.main_chat__message__box__upper-info__date
-    -#       2019/11/20(Wed)17:43:01
-    -#   %p.main_chat__message__box__upper-info__text
-    -#     aaaaaaaaaaaaaa
 
   .main_chat__message-form
     .main_chat__message-form__new-message
@@ -32,30 +24,3 @@
           = f.file_field :image, class: 'main_chat__message-form__new-message__image__file'
         = f.submit 'Send', class: 'main_chat__message-form__new-message__submit-btn'
 
-
--# .main_chat__group
--#   Member：sample_user
--#   - @group.users.each_with_index do |user, i|
--#     - unless i.zero?
--#       ,
--#     = user.name
-
-
-
-
-      -# = form_for [@group, @message] do |f|
-      -#   = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-      -#   .form__mask
-      -#     = f.label :image, class: 'input-box__image' do
-      -#       = icon('fas', 'image', class: 'icon')
-      -#       = f.file_field :image, class: 'nput-box__image__file'
-      -#   = f.submit 'Send', class: 'submit-btn'
-
-
--# .input-box
--#          = form_for [@group, @message] do |f|
--#           %input{type: "text", class: "input-box__text", placeholder: "type a message"}
--#           %label{class: "input-box__image"}
--#           = icon('fas','image')
--#           %input{type: "file", class: "input-box__image__file"}
--#           %input{type: "submit", class: "submit-btn"}
