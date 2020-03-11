@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
    if ( message.image ) {
      var html =
-      `<div class="messages" data-message-id=${message.id}>
+      `<div class="message" data-message-id=${message.id}>
          <div class="main_chat__message__box__upper-info">
            <div class="main_chat__message__box__upper-info__talker">
              ${message.user.name}
@@ -11,7 +11,7 @@ $(function(){
              ${message.created_at.strftime}
            </div>
          </div>
-         <div class="lower-message">
+         <div class="main_chat__message__box__upper-info__text">
            <p class="lower-message__content">
              ${message.content}
            </p>
@@ -21,16 +21,16 @@ $(function(){
      return html;
    } else {
      var html =
-      `<div class="messages" data-message-id=${message.id}>
+      `<div class="message" data-message-id=${message.id}>
          <div class="main_chat__message__box__upper-info">
            <div class="main_chat__message__box__upper-info__talker">
-             ${message.user.name}
+             ${message.user_name}
            </div>
            <div class="main_chat__message__box__upper-info__date">
-             ${message.created_at.strftime}
+             ${message.created_at}
            </div>
          </div>
-         <div class="lower-message">
+         <div class="main_chat__message__box__upper-info__text">
            <p class="lower-message__content">
              ${message.content}
            </p>
@@ -53,7 +53,7 @@ $(function(){
   })
     .done(function(data){
       var html = buildHTML(data);
-      $('.main_chat__message').append(html);      
+      $('.messages').append(html);      
       $('.main_chat__message').animate({ scrollTop: $('.main_chat__message')[0].scrollHeight});
       $('form')[0].reset();
       $('input').prop('disabled', false);
