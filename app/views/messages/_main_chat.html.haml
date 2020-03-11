@@ -4,6 +4,7 @@
       .main_chat__group__main-header__left-box__name
         = @group.name
       .main_chat__group__main-header__left-box__member
+          Member
         - @group.users.each do |user| 
           = user.name
     .main_chat__group__main-header__right-box
