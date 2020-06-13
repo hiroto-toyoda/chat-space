@@ -60,4 +60,9 @@ gem 'haml-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
+<<<<<<< Updated upstream
 gem 'mini_magick'
+=======
+gem 'mini_magick'
+gem 'fog-aws'
+>>>>>>> Stashed changes

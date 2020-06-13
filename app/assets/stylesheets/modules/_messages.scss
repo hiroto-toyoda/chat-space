@@ -144,6 +144,10 @@
           font-size: 12px;
           margin-left: 10px;
         }
+        &__garbage {
+          color: #999999;
+          
+        }
       &__text {
         color: #434a54;
         font-size: 14px;
@@ -173,6 +177,8 @@
         position: absolute;
         top: 0px;
         right: 0px;
+        font-size: inherit;
+        font-weight: 700;
       }
       &__text {
         height: 50px;
