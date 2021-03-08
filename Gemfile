@@ -42,6 +42,11 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -53,6 +58,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'font-awesome-sass'
@@ -60,9 +69,8 @@ gem 'haml-rails'
 gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
-<<<<<<< Updated upstream
 gem 'mini_magick'
-=======
 gem 'mini_magick'
 gem 'fog-aws'
->>>>>>> Stashed changes
+gem 'mini_magick'
+gem 'fog-aws'
