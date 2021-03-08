@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    # @message = Message.all
   end
 
   def create
@@ -18,6 +19,18 @@ class MessagesController < ApplicationController
       render :index
     end
   end
+
+  def destroy
+    message = Message.find(params[:id])
+    if message.destroy
+      redirect_to root_path, notice: '削除しました'
+    else
+      render :index
+    end
+    # @group = Group.find(params[:id])
+    # @message = Message.find(params[:id])
+  end
+
 
   private
 
